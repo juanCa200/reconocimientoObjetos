@@ -1,17 +1,15 @@
-FINDIT AI V4 — BÚSQUEDA A DISTANCIA
-===================================
-Novedad: compara la referencia con ventanas de varios tamaños (búsqueda multiescala) para probar regiones pequeñas donde podría aparecer un objeto lejano. Incluye zoom digital para inspeccionar zonas.
+FINDIT AI V4 — CORRECCIÓN DE ERROR JAVASCRIPT
+==============================================
+Se corrigió una llave faltante en la función de escaneo que provocaba:
+Uncaught SyntaxError: Unexpected token 'catch'
 
 USO
-1. Publica index.html en un hosting HTTPS.
-2. Ábrelo en Chrome del celular.
-3. Sube una foto nítida. Mejor si el objeto ocupa buena parte de la imagen; recorta el fondo si puedes.
-4. Pulsa Preparar búsqueda y espera a que la referencia esté lista.
-5. Activa la cámara, mantén el celular estable y barre la habitación lentamente.
-6. Ajusta el zoom digital para inspeccionar zonas.
+1. Descomprime el ZIP en una carpeta nueva.
+2. Ejecuta INICIAR.bat.
+3. Abre la dirección indicada en la consola.
+4. Selecciona la foto; debe aparecer como cargada.
+5. Pulsa “Preparar búsqueda”, espera a que el modelo indique “Listo”.
+6. Pulsa “Activar cámara”.
 
-LIMITACIONES
-Es experimental y usa embeddings generales de MobileNet, no un modelo entrenado para identificar tu objeto exacto. La similitud NO es una probabilidad calibrada. Puede fallar con objetos pequeños, borrosos, ocultos, cambios de iluminación o ángulos; un resultado alto no prueba identidad. El análisis multiescala consume recursos y puede ser lento en celulares modestos.
-
-REQUISITOS
-Internet para descargar TensorFlow.js y MobileNet desde jsDelivr. HTTPS para cámara móvil. El video se analiza en el navegador.
+Se comprobó la sintaxis JavaScript con Node.js. No se ha podido probar físicamente en tu dispositivo.
+La primera carga del modelo necesita internet y la cámara en móvil requiere HTTPS.
