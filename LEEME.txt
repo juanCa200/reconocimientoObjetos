@@ -1,0 +1,19 @@
+FINDIT AI v2 — CORRECCIÓN DE CARGA
+===================================
+Esta versión corrige el punto donde podía quedarse cargando: el modelo de IA se carga paso a paso, y si falla muestra un error legible en lugar de dejar la interfaz bloqueada.
+
+USO
+1. Descomprime el ZIP.
+2. Publica index.html en un hosting HTTPS o usa un servidor local.
+3. En el celular, abre el sitio HTTPS con Chrome y permite la cámara.
+4. Selecciona una foto, pulsa Analizar referencia y espera a que cargue el modelo.
+5. Activa la cámara.
+
+REQUISITOS
+- Internet durante la primera carga: descarga TensorFlow.js y COCO-SSD desde jsDelivr.
+- Cámara del dispositivo y permiso del navegador.
+- HTTPS para cámara en móvil.
+- En Windows, ejecuta INICIAR.bat y abre http://localhost:8000; para abrirlo desde otro dispositivo necesitas HTTPS.
+
+LIMITACIÓN
+COCO-SSD reconoce categorías generales, no la identidad exacta del objeto. Una foto de una pinza negra, por ejemplo, puede no detectarse porque las pinzas para cabello no son una categoría del modelo. Para esa clase de objeto se necesita un modelo de detección/embeddings más general o entrenado.
