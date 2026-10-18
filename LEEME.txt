@@ -1,19 +1,17 @@
-FINDIT AI v2 — CORRECCIÓN DE CARGA
+FINDIT AI V4 — BÚSQUEDA A DISTANCIA
 ===================================
-Esta versión corrige el punto donde podía quedarse cargando: el modelo de IA se carga paso a paso, y si falla muestra un error legible en lugar de dejar la interfaz bloqueada.
+Novedad: compara la referencia con ventanas de varios tamaños (búsqueda multiescala) para probar regiones pequeñas donde podría aparecer un objeto lejano. Incluye zoom digital para inspeccionar zonas.
 
 USO
-1. Descomprime el ZIP.
-2. Publica index.html en un hosting HTTPS o usa un servidor local.
-3. En el celular, abre el sitio HTTPS con Chrome y permite la cámara.
-4. Selecciona una foto, pulsa Analizar referencia y espera a que cargue el modelo.
-5. Activa la cámara.
+1. Publica index.html en un hosting HTTPS.
+2. Ábrelo en Chrome del celular.
+3. Sube una foto nítida. Mejor si el objeto ocupa buena parte de la imagen; recorta el fondo si puedes.
+4. Pulsa Preparar búsqueda y espera a que la referencia esté lista.
+5. Activa la cámara, mantén el celular estable y barre la habitación lentamente.
+6. Ajusta el zoom digital para inspeccionar zonas.
+
+LIMITACIONES
+Es experimental y usa embeddings generales de MobileNet, no un modelo entrenado para identificar tu objeto exacto. La similitud NO es una probabilidad calibrada. Puede fallar con objetos pequeños, borrosos, ocultos, cambios de iluminación o ángulos; un resultado alto no prueba identidad. El análisis multiescala consume recursos y puede ser lento en celulares modestos.
 
 REQUISITOS
-- Internet durante la primera carga: descarga TensorFlow.js y COCO-SSD desde jsDelivr.
-- Cámara del dispositivo y permiso del navegador.
-- HTTPS para cámara en móvil.
-- En Windows, ejecuta INICIAR.bat y abre http://localhost:8000; para abrirlo desde otro dispositivo necesitas HTTPS.
-
-LIMITACIÓN
-COCO-SSD reconoce categorías generales, no la identidad exacta del objeto. Una foto de una pinza negra, por ejemplo, puede no detectarse porque las pinzas para cabello no son una categoría del modelo. Para esa clase de objeto se necesita un modelo de detección/embeddings más general o entrenado.
+Internet para descargar TensorFlow.js y MobileNet desde jsDelivr. HTTPS para cámara móvil. El video se analiza en el navegador.
